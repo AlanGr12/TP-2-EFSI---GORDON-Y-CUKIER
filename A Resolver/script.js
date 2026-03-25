@@ -11,6 +11,10 @@ reset.addEventListener("click", resetearValores)
 
 button.addEventListener("click", checkGuess)
 
+input.addEventListener("keydown", function(e) {
+  if (e.key === "Enter") checkGuess()
+})
+
 let juegoTerm = false;
 
 function checkGuess(){
@@ -42,8 +46,7 @@ function resetearValores(){
   attempts = 0
   juegoTerm = false
 
-  attempts = attempts + 1
-  
-  attemptsText.innerText = attempts
+  attemptsText.innerText = 0
+  message.innerHTML = " ";
 
 }
